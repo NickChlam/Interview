@@ -8,20 +8,13 @@ namespace FullStackDevExercise
   {
     public static void Main(string[] args)
     {
-      BootstrapData();
+  
       CreateHostBuilder(args).Build().Run();
     }
 
     private static void BootstrapData()
     {
-      var connectionStringBuilder = new SqliteConnectionStringBuilder();
-      connectionStringBuilder.DataSource = "./dolittle.db";
-
-      using var connection = new SqliteConnection(connectionStringBuilder.ConnectionString);
-      connection.Open();
-      SetupDB(connection);
-      CreateOwnersTable(connection);
-      CreatePetsTable(connection);
+      
     }
 
     private static void SetupDB(SqliteConnection connection) { 
